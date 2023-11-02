@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple interest calculator</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <script>
+        
+
+        const div1 = document.createElement("div");
+
+        div1.classList.add("main");
+
+        document.body.appendChild(div1);
+
+        const div2 = document.createElement("div");
+        div2.classList.add("main1");
+        div1.appendChild(div2);
+
+        const div3 = document.createElement("div");
+        div3.classList.add("main2");
+        div2.appendChild(div3);
+
+        const div4 = document.createElement("div");
+        div4.classList.add("content");
+        div3.appendChild(div4);
+
+        const h3 = document.createElement("h3");
+        h3.innerText = "Principal($):";
+        div4.appendChild(h3);
+
+        const input1 = document.createElement("input");
+        input1.classList.add("p11");
+        input1.setAttribute("type", "text");
+        div4.appendChild(input1);
+
+        const h1 = document.createElement("h3");
+        h1.innerText = "Time:";
+        div4.appendChild(h1);
+
+        const input2 = document.createElement("input");
+        input2.classList.add("p111");
+        input2.setAttribute("type", "text");
+        div4.appendChild(input2);
+
+        const div5 = document.createElement("div");
+        div5.classList.add("content1");
+        div3.appendChild(div5);
+
+        const h2 = document.createElement("h3");
+        h2.innerText = "Rate:";
+        div5.appendChild(h2);
+
+        const input3 = document.createElement("input");
+        input3.classList.add("p1111");
+        input3.setAttribute("type", "text");
+        div5.appendChild(input3);
+
+        const br = document.createElement("br");
+        div5.appendChild(br);
+
+        const br1 = document.createElement("br");
+        div5.appendChild(br1);
+
+        const dropdown = document.createElement("select");
+        const option = document.createElement("option");
+        option.classList.add("option");
+        option.innerHTML = "year";
+        dropdown.appendChild(option);
+
+        const option1 = document.createElement("option");
+        option1.classList.add("option1");
+        option1.innerText = "month";
+        dropdown.appendChild(option1);
+        div5.appendChild(dropdown);
+
+        const option2 = document.createElement("option");
+        option2.classList.add("option2");
+        option2.innerText = "days";
+        dropdown.appendChild(option2);
+
+
+        let button1 = document.createElement("button");
+        button1.classList.add("b1");
+        button1.innerText = "Calculate";
+        button1.onclick = () => {
+            debugger;
+            let a = Number(document.querySelector(".p11").value);
+            let b = Number(document.querySelector(".p111").value);
+            let c = Number(document.querySelector(".p1111").value);
+
+
+            if (dropdown.value == "year") {
+                let f = b * 365;
+                let sum = a / 30 * c * f / 100;
+                let sum1 = a + sum;
+                document.querySelector(".p1").innerHTML = "Principal Amount :" + a;
+                document.querySelector(".p2").innerHTML = "Total Interest :" + sum;
+                document.querySelector(".p3").innerHTML = "Total Amount :" + sum1;
+            }
+            else if (dropdown.value == "month") {
+                let g = b * 30;
+                let sum = a / 30 * c * g / 100;
+                let sum1 = a + sum;
+                document.querySelector(".p1").innerHTML = "Principal Amount :" + a;
+                document.querySelector(".p2").innerHTML = "Total Interest :" + sum;
+                document.querySelector(".p3").innerHTML = "Total Amount :" + sum1;
+            }
+            else if (dropdown.value == "days") {
+                debugger;
+                let z = b * 1;
+                let sum = a / 30 * c * z / 100;
+                let sum1 = a + sum;
+                document.querySelector(".p1").innerHTML = "Principal Amount :" + a;
+                document.querySelector(".p2").innerHTML = "Total Interest :" + sum;
+                document.querySelector(".p3").innerHTML = "Total Amount :" + sum1;
+            }
+        };
+
+        div2.appendChild(button1);
+
+        const br2 = document.createElement("br");
+        div5.appendChild(br2);
+
+        const div6 = document.createElement("div");
+        div6.classList.add("content2");
+        div2.appendChild(div6);
+
+        const p1 = document.createElement("p");
+        p1.classList.add("p1");
+        div6.appendChild(p1);
+
+        const p2 = document.createElement("p");
+        p2.classList.add("p2");
+        div6.appendChild(p2);
+
+        const p3 = document.createElement("p");
+        p3.classList.add("p3");
+        div6.appendChild(p3);
+
+
+        const div7 = document.createElement("div");
+        div7.classList.add("content3");
+        div1.appendChild(div7);
+
+        const h4 = document.createElement("h1");
+        h4.style.color = "white";
+        h4.innerText = "SIMPLE INTREST";
+        div7.appendChild(h4);
+
+        const h5 = document.createElement("h1");
+        h5.innerText = "CALCULATOR";
+        div7.appendChild(h5);
+
+        const h6 = document.createElement("h1");
+        h6.style.backgroundColor = "white";
+        h6.innerText = "HTML,CSS & JAVASCIPRT";
+        div7.appendChild(h6);
+        let p = document.createElement("p");
+        p.classList.add("result");
+        document.body.appendChild(p);
+
+
+
+
+    </script>
+</body>
+
+</html>
